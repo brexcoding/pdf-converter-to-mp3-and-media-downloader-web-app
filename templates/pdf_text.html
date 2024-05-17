@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>PDF Text</title>
+    <style>
+        .dropbtn {
+        background-color: #af0cd7;
+        color: white;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        border-radius:7px;
+        }
+
+        .dropdown {
+        position: relative;
+        display: inline-block;
+        border-radius: 7px;
+        }
+
+        .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        }
+
+        .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        }
+
+        .dropdown-content a:hover {background-color: #ddd;}
+
+        .dropdown:hover .dropdown-content {display: block;}
+
+        .dropdown:hover .dropbtn {background-color: #9c68e0;}
+        /* Dark theme styles */
+        body.dark-mode {
+            background-color: #333;
+            color: #fff;
+        }
+
+        /* Light theme styles */
+        body.light-mode {
+            background-color: #fff;
+            color: #080808;
+        }
+
+        /* High contrast theme styles */
+        body.high-contrast-mode {
+            background-color: #000000;
+            color: #f8f1f1;
+        }
+
+        pre {
+            padding-left: 10%; /* Adjust the padding size as needed */
+        }
+
+        /* Styles for the "Back to Top" button */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            display: none; /* Hide initially */
+            background-color: #a31be2;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        /* Styles for the button on hover */
+        .back-to-top:hover {
+            background-color: #1a4ace;
+        }
+    </style>
+</head>
+<body class="light-mode">
+    <h1>PDF Text</h1>
+
+    <!-- Dropdown button for theme selection -->
+ 
+    <div class="dropdown">
+        <button class="dropbtn">change theme </button>
+        <div class="dropdown-content">
+            <a class="dropdown-item" href="#" onclick="changeTheme('light')">Light Mode</a>
+            <a class="dropdown-item" href="#" onclick="changeTheme('dark')">Dark Mode</a>
+            <a class="dropdown-item" href="#" onclick="changeTheme('high-contrast')">High Contrast Mode</a>
+        </div>
+      </div>
+
+    <button class="back-to-top" onclick="scrollToTop()">Back to Top</button>
+
+    <pre>{{ extracted_text }}</pre> 
+
+    <script>
+        // Function to change the theme
+        function changeTheme(theme) {
+            document.body.className = theme + '-mode';
+        }
+
+        // Function to scroll to the top
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Show/hide the "Back to Top" button based on scroll position
+        window.onscroll = function() {
+            var scrollPos = window.pageYOffset || document.documentElement.scrollTop;
+            var backToTopBtn = document.querySelector('.back-to-top');
+
+            if (scrollPos > 100) {
+                backToTopBtn.style.display = 'block';
+            } else {
+                backToTopBtn.style.display = 'none';
+            }
+        };
+    </script>
+    <!-- Bootstrap JS -->
+  
+</body>
+</html>

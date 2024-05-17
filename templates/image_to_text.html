@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Upload</title>
+    <style>
+        #the-form{
+            padding: 7%;
+        }
+        .url-container {
+        text-align: center;
+        backdrop-filter: blur(33px); 
+        padding: 5px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .mybox{
+            padding: 10%;
+        }
+
+
+    </style>
+</head>
+<body>
+    {% include 'base.html' %}
+
+<center>    
+    <div class="mybox">
+        <div class="url-container">
+            <form method="post" enctype="multipart/form-data" id="the-form">
+                <h1>convert image to text </h1>
+                <br> 
+                <p>the model is not efficient with handwritten files</p>
+                <br>
+                {% csrf_token %}
+                <input type="file" name="file">
+                <button type="submit">upload and convert </button>
+                
+            </form>
+        </div>
+    </div>
+
+</center>
+</body>
+</html>

@@ -1,0 +1,55 @@
+/* Other styles */
+#navbar .nav-link {
+    color: rgb(217, 202, 217); /* Set the color of the navigation links to purple */
+    font-weight: bold;
+}
+#navbar {
+padding: 10px 20px;
+position: fixed;
+
+top: 0;
+width: 100%; 
+width: 100%;
+z-index: 10;
+backdrop-filter: blur(22px);  /* Apply blur effect */
+}
+
+#navbar a {
+color: #d4cbd8;
+text-decoration: none;
+padding: 10px 15px;
+}
+
+
+#navbar .navbar-toggler {
+
+background-color: rgb(32, 29, 35);
+color: rgb(246, 151, 246); /* Set the background color to purple */
+
+}
+
+
+#navbar-brand{
+font-weight: bolder;
+font-family:  Roboto ; 
+font-size: 150%;
+}
+.heading{
+color: blueviolet;
+padding-top: 55px;
+padding-bottom: 3%;
+-webkit-text-stroke-width: 1px; /* Set the width of the stroke */
+-webkit-text-stroke-color: rgb(230, 178, 184); /* Set the color of the stroke */
+
+}
+ 
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+.embedded-html {
+    height: 300px; /* Adjust height for smaller screens */
+}
+}
+
+
+ 
